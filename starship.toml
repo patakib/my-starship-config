@@ -1,0 +1,65 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+[[battery.display]] # 'bold red' style and discharging_symbol when capacity is between 0% and 10%
+threshold = 20
+style = 'bold red'
+
+[[battery.display]] # 'bold yellow' style and 💦 symbol when capacity is between 10% and 30%
+threshold = 40
+style = 'bold yellow'
+
+[[battery.display]]
+threshold = 100
+style = 'bold green'
+
+[battery]
+full_symbol = "🔋"
+charging_symbol = "⚡️"
+discharging_symbol = '💦 '
+
+[cmd_duration]
+min_time = 500
+format = 'underwent [$duration](bold yellow)'
+
+[container]
+format = '[$symbol \[$name\]]($style) '
+
+[directory]
+truncation_length = 8
+truncation_symbol = '…/'
+
+[git_branch]
+symbol = "git branch: "
+style = "bold yellow"
+
+[kubernetes]
+symbol = "⛵ "
+style = "dimmed green"
+disabled = false
+
+[hostname]
+ssh_only = false
+format = "<[$hostname]($style)>"
+trim_at = "-"
+style = "bold dimmed white"
+disabled = false
+
+[username]
+style_user = "bold dimmed blue"
+show_always = false
+
+[memory_usage]
+format = '[${ram}( | ${ram_pct})]($style) '
+disabled = false
+threshold = -1
+style = "bold green"
+
+[time]
+time_format = "%T"
+format = "$time($style) "
+style = "bright-white"
+disabled = false
+
